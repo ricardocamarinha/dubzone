@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Custom Fonts */
+  /* Vintaface Regular */
+  @font-face {
+    font-family: "Vintaface";
+    src: url("../font/vintaface/Vintaface-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    /* Dark reggae theme - main colors */
+    --background: 210 11% 8%;
+    --foreground: 52 100% 88%;
+
+    --card: 210 11% 12%;
+    --card-foreground: 52 100% 88%;
+
+    --popover: 210 11% 12%;
+    --popover-foreground: 52 100% 88%;
+
+    --primary: 52 100% 65%;
+    --primary-foreground: 210 11% 8%;
+
+    --secondary: 210 11% 15%;
+    --secondary-foreground: 52 100% 88%;
+
+    --muted: 210 11% 15%;
+    --muted-foreground: 210 4% 55%;
+
+    --accent: 210 11% 15%;
+    --accent-foreground: 52 100% 88%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 11% 20%;
+    --input: 210 11% 20%;
+    --ring: 52 100% 65%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 210 11% 12%;
+    --sidebar-foreground: 210 4% 55%;
+    --sidebar-primary: 52 100% 65%;
+    --sidebar-primary-foreground: 210 11% 8%;
+    --sidebar-accent: 210 11% 15%;
+    --sidebar-accent-foreground: 52 100% 88%;
+    --sidebar-border: 210 11% 20%;
+    --sidebar-ring: 52 100% 65%;
+
+    /* Reggae color palette */
+    --reggae-green: 120 100% 30%;
+    --reggae-yellow: 52 100% 65%;
+    --reggae-red: 0 84% 60%;
+    --reggae-orange: 25 100% 55%;
+    --reggae-teal: 180 100% 35%;
+    --reggae-purple: 280 100% 70%;
+  }
+
+  .dark {
+    /* Enhanced dark reggae theme */
+    --background: 210 11% 6%;
+    --foreground: 52 100% 90%;
+
+    --card: 210 11% 10%;
+    --card-foreground: 52 100% 90%;
+
+    --popover: 210 11% 10%;
+    --popover-foreground: 52 100% 90%;
+
+    --primary: 52 100% 70%;
+    --primary-foreground: 210 11% 6%;
+
+    --secondary: 210 11% 12%;
+    --secondary-foreground: 52 100% 90%;
+
+    --muted: 210 11% 12%;
+    --muted-foreground: 210 4% 60%;
+
+    --accent: 210 11% 12%;
+    --accent-foreground: 52 100% 90%;
+
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 210 11% 6%;
+
+    --border: 210 11% 18%;
+    --input: 210 11% 18%;
+    --ring: 52 100% 70%;
+
+    --sidebar-background: 210 11% 8%;
+    --sidebar-foreground: 210 4% 60%;
+    --sidebar-primary: 52 100% 70%;
+    --sidebar-primary-foreground: 210 11% 6%;
+    --sidebar-accent: 210 11% 12%;
+    --sidebar-accent-foreground: 52 100% 90%;
+    --sidebar-border: 210 11% 18%;
+    --sidebar-ring: 52 100% 70%;
+
+    /* Enhanced reggae colors for dark mode */
+    --reggae-green: 120 100% 35%;
+    --reggae-yellow: 52 100% 70%;
+    --reggae-red: 0 84% 65%;
+    --reggae-orange: 25 100% 60%;
+    --reggae-teal: 180 100% 40%;
+    --reggae-purple: 280 100% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+  }
+
+  .pause-animation:hover {
+    animation-play-state: paused;
+  }
+}
